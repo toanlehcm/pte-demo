@@ -1,14 +1,620 @@
-/* @import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities"; */
-
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
-
 @import "tailwindcss";
 
-body {
+@layer base {
+  /* Global font configuration */
+  body {
+    color: var(--text-primary-2);
+    font-family: var(--font-poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif);
+    font-size: 1rem;
+    /* Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  main {
+    background-color: #F2F2F7;
+  }
+
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 27 100% 51%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 36deg 100% 95.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --tertiary: 231 13% 49%;
+    --tertiary-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --safe-top: env(safe-area-inset-top, 0px);
+    /* Custom CSS Variables are auto-generated from Tailwind config via plugin */
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --text-primary-2: #151d48;
+
+    /* Custom CSS Variables are auto-generated from Tailwind config via plugin */
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded font-medium focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500;
+  }
+}
+
+@layer utilities {
+  /* Custom utility classes using CSS variables */
+
+  /* 
+   * REUSABLE COLOR SYSTEM:
+   * 
+   * Option 1: Use Tailwind's color system (recommended)
+   * - text-color-[color-name]  (e.g., text-color-primary-default)
+   * - bg-color-[color-name]    (e.g., bg-color-primary-default)
+   * - border-color-[color-name] (e.g., border-color-primary-default)
+   * 
+   * Option 2: Use specific utility classes below (legacy support)
+   * - text-[name] for text colors
+   * - bg-[name] for background colors
+   * - border-[name] for border colors (using stroke classes)
+   * 
+   * All colors defined in tailwind.config.js theme.colors.color
+   * can be used for text, background, and border.
+   */
+
+  /**** Text colors ****/
+  .text-primary {
+    color: var(--text-primary-default);
+  }
+
+  .text-primary-2 {
+    color: var(--text-primary-2);
+  }
+
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+
+  .text-tertiary {
+    color: var(--text-tertiary);
+  }
+
+  .text-disable {
+    color: var(--text-disable);
+  }
+
+  .text-white {
+    color: var(--text-white);
+  }
+
+  .text-error-default {
+    color: var(--error-default);
+  }
+
+  .text-success-default {
+    color: var(--success-4);
+  }
+
+  /**** Background colors ****/
+  /* Fill/Surface colors */
+  .bg-default {
+    background-color: var(--bg-default);
+  }
+
+  .bg-container-primary {
+    background-color: var(--container-primary);
+  }
+
+  .bg-container-secondary {
+    background-color: var(--container-secondary);
+  }
+
+  .bg-container-tertiary {
+    background-color: var(--container-tertiary);
+  }
+
+  .bg-container-disable {
+    background-color: var(--container-disable);
+  }
+
+  .bg-container-highlight-1 {
+    background-color: var(--container-highlight-1);
+  }
+
+  .bg-container-highlight-2 {
+    background-color: var(--container-highlight-2);
+  }
+
+  .bg-container-tooltip {
+    background-color: var(--container-tooltip);
+  }
+
+  .bg-container-modal {
+    background-color: var(--container-modal);
+  }
+
+  .bg-bubble-chat-sent {
+    background-color: var(--bubble-chat-sent);
+  }
+
+  .bg-bubble-chat-received {
+    background-color: var(--bubble-chat-received);
+  }
+
+  /* Fill/CTA colors */
+  .bg-primary-default {
+    background-color: var(--primary-default);
+  }
+
+  .bg-primary-hover {
+    background-color: var(--primary-hover);
+  }
+
+  .bg-primary-pressed {
+    background-color: var(--primary-pressed);
+  }
+
+  .bg-primary-disable {
+    background-color: var(--primary-disable);
+  }
+
+  .bg-tertiary-primary-default {
+    background-color: var(--tertiary-primary-default);
+  }
+
+  .bg-tertiary-primary-hover {
+    background-color: var(--tertiary-primary-hover);
+  }
+
+  .bg-tertiary-primary-pressed {
+    background-color: var(--tertiary-primary-pressed);
+  }
+
+  .bg-tertiary-primary-disable {
+    background-color: var(--tertiary-primary-disable);
+  }
+
+  .bg-error-hover {
+    background-color: var(--error-hover);
+  }
+
+  .bg-error-pressed {
+    background-color: var(--error-pressed);
+  }
+
+  .bg-error-disable {
+    background-color: var(--error-disable);
+  }
+
+  .bg-error-default {
+    background-color: var(--error-default);
+  }
+
+  .bg-tertiary-error-default {
+    background-color: var(--tertiary-error-default);
+  }
+
+  .bg-tertiary-error-hover {
+    background-color: var(--tertiary-error-hover);
+  }
+
+  .bg-tertiary-error-pressed {
+    background-color: var(--tertiary-error-pressed);
+  }
+
+  .bg-tertiary-error-disable {
+    background-color: var(--tertiary-error-disable);
+  }
+
+  /*** Icon colors ***/
+  /* Icon/Primary colors */
+  .icon-primary-1 {
+    color: var(--icon-primary-1);
+  }
+
+  .icon-primary-2 {
+    color: var(--icon-primary-2);
+  }
+
+  .icon-secondary {
+    color: var(--icon-secondary);
+  }
+
+  .icon-tertiary {
+    color: var(--icon-tertiary);
+  }
+
+  .icon-disable {
+    color: var(--icon-disable);
+  }
+
+  .icon-white {
+    color: var(--icon-white);
+  }
+
+  /* Icon/CTA colors */
+  .icon-others-default {
+    color: var(--icon-others-default);
+  }
+
+  .icon-others-pressed {
+    color: var(--icon-others-pressed);
+  }
+
+  /* Icon/Featured Icon colors */
+  .icon-error-1 {
+    color: var(--icon-error-1);
+  }
+
+  .icon-error-2 {
+    color: var(--icon-error-2);
+  }
+
+  .icon-error-3 {
+    color: var(--icon-error-3);
+  }
+
+  .icon-warning-1 {
+    color: var(--icon-warning-1);
+  }
+
+  .icon-warning-2 {
+    color: var(--icon-warning-2);
+  }
+
+  .icon-warning-3 {
+    color: var(--icon-warning-3);
+  }
+
+  .icon-success-1 {
+    color: var(--icon-success-1);
+  }
+
+  .icon-success-2 {
+    color: var(--icon-success-2);
+  }
+
+  .icon-success-3 {
+    color: var(--icon-success-3);
+  }
+
+  .icon-gray {
+    color: var(--icon-gray);
+  }
+
+  .icon-primary {
+    color: var(--icon-primary);
+  }
+
+  /**** Stroke colors ****/
+  /* Stroke/Primary colors */
+  .stroke-primary-1 {
+    color: var(--stroke-primary-1);
+  }
+
+  .stroke-primary-2 {
+    color: var(--stroke-primary-2);
+  }
+
+  .stroke-secondary {
+    color: var(--stroke-secondary);
+  }
+
+  .stroke-disable {
+    color: var(--stroke-disable);
+  }
+
+  .stroke-destructive {
+    color: var(--stroke-destructive);
+  }
+
+  .stroke-successful {
+    color: var(--stroke-successful);
+  }
+
+  .stroke-inverted {
+    color: var(--stroke-inverted);
+  }
+
+  .stroke-white {
+    color: var(--stroke-white);
+  }
+
+  .stroke-highlight {
+    color: var(--stroke-highlight);
+  }
+
+  /**** Badge/Outline colors ****/
+  .badge-outline-purple-orchid {
+    color: var(--outline-purple-orchid);
+  }
+
+  .badge-outline-blue {
+    color: var(--outline-blue);
+  }
+
+  .badge-outline-cyan {
+    color: var(--outline-cyan);
+  }
+
+  .badge-outline-gold {
+    color: var(--outline-gold);
+  }
+
+  .badge-outline-lime-green {
+    color: var(--outline-lime-green);
+  }
+
+  .badge-outline-error {
+    color: var(--outline-error);
+  }
+
+  .badge-outline-success {
+    color: var(--outline-success);
+  }
+
+  .badge-outline-warning {
+    color: var(--outline-warning);
+  }
+
+  /**** Badge/Fill colors ****/
+  .badge-fill-purple-orchid {
+    color: var(--fill-purple-orchid);
+  }
+
+  .badge-fill-blue {
+    color: var(--fill-blue);
+  }
+
+  .badge-fill-cyan {
+    color: var(--fill-cyan);
+  }
+
+  .badge-fill-gold {
+    color: var(--fill-gold);
+  }
+
+  .badge-fill-lime-green {
+    color: var(--fill-lime-green);
+  }
+
+  .badge-fill-error {
+    color: var(--fill-error);
+  }
+
+  .badge-fill-success {
+    color: var(--fill-success);
+  }
+
+  .badge-fill-warning {
+    color: var(--fill-warning);
+  }
+
+  .badge-fill-primary {
+    color: var(--fill-primary);
+  }
+
+  /**** Opacity colors ****/
+  /* White opacity */
+  .bg-white-1 {
+    background-color: var(--white-1);
+  }
+
+  .bg-white-2 {
+    background-color: var(--white-2);
+  }
+
+  .bg-white-3 {
+    background-color: var(--white-3);
+  }
+
+  .text-white-1 {
+    color: var(--white-1);
+  }
+
+  .text-white-2 {
+    color: var(--white-2);
+  }
+
+  .text-white-3 {
+    color: var(--white-3);
+  }
+
+  /* Black opacity */
+  .bg-black-1 {
+    background-color: var(--black-1);
+  }
+
+  .bg-black-2 {
+    background-color: var(--black-2);
+  }
+
+  .bg-black-3 {
+    background-color: var(--black-3);
+  }
+
+  .text-black-1 {
+    color: var(--black-1);
+  }
+
+  .text-black-2 {
+    color: var(--black-2);
+  }
+
+  .text-black-3 {
+    color: var(--black-3);
+  }
+
+  /* Primary opacity */
+  .bg-primary-opacity-12 {
+    background-color: var(--primary-opacity-12);
+  }
+
+  .bg-primary-opacity-16 {
+    background-color: var(--primary-opacity-16);
+  }
+
+  .bg-primary-opacity-20 {
+    background-color: var(--primary-opacity-20);
+  }
+
+  .bg-primary-opacity-24 {
+    background-color: var(--primary-opacity-24);
+  }
+
+  .bg-primary-opacity-30 {
+    background-color: var(--primary-opacity-30);
+  }
+
+  .bg-primary-opacity-60 {
+    background-color: var(--primary-opacity-60);
+  }
+
+  .bg-primary-opacity-80 {
+    background-color: var(--primary-opacity-80);
+  }
+
+  .text-primary-opacity-12 {
+    color: var(--primary-opacity-12);
+  }
+
+  .text-primary-opacity-16 {
+    color: var(--primary-opacity-16);
+  }
+
+  .text-primary-opacity-20 {
+    color: var(--primary-opacity-20);
+  }
+
+  .text-primary-opacity-24 {
+    color: var(--primary-opacity-24);
+  }
+
+  .text-primary-opacity-30 {
+    color: var(--primary-opacity-30);
+  }
+
+  .text-primary-opacity-60 {
+    color: var(--primary-opacity-60);
+  }
+
+  .text-primary-opacity-80 {
+    color: var(--primary-opacity-80);
+  }
+
+  /* Chat colors */
+  .bg-chat-received {
+    background-color: var(--chat-received);
+  }
+
+  .bg-chat-sent {
+    background-color: var(--chat-sent);
+  }
+
+  .text-chat-received {
+    color: var(--chat-received);
+  }
+
+  .text-chat-sent {
+    color: var(--chat-sent);
+  }
+
+  /* Interactive colors */
+  .bg-interactive-1 {
+    background-color: var(--interactive-1);
+  }
+
+  .bg-interactive-2 {
+    background-color: var(--interactive-2);
+  }
+
+  .text-interactive-1 {
+    color: var(--interactive-1);
+  }
+
+  .text-interactive-2 {
+    color: var(--interactive-2);
+  }
+
+  /**** Border colors (reusable) ****/
+  /* These border utilities use the same CSS variables as stroke colors */
+  .border-primary-default {
+    border-color: var(--stroke-default);
+  }
+
+  .border-primary-2 {
+    border-color: var(--stroke-primary-2);
+  }
+
+  .border-icon-white {
+    border-color: var(--icon-white);
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  .no-spin::-webkit-outer-spin-button,
+  .no-spin::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  .no-spin[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -20,4 +626,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */

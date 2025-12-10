@@ -23,9 +23,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-      "start": "vite",
-      "build": "vite build",
-      "preview": "vite preview"
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
     "@types/node": "^24.10.2",
     "@vitejs/plugin-react": "^5.1.2",
     "autoprefixer": "^10.4.22",
