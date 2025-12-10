@@ -11,7 +11,6 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/node": "^24.10.2",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "axios": "^1.13.2",
@@ -19,16 +18,14 @@
     "react-dom": "^19.2.1",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.10.1",
-    "react-scripts": "5.0.1",
     "redux-saga": "^1.4.2",
     "typescript": "^5.9.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+      "start": "vite",
+      "build": "vite build",
+      "preview": "vite preview"
   },
   "eslintConfig": {
     "extends": [
@@ -49,8 +46,11 @@
     ]
   },
   "devDependencies": {
+    "@types/node": "^24.10.2",
+    "@vitejs/plugin-react": "^5.1.2",
     "autoprefixer": "^10.4.22",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.17"
+    "tailwindcss": "^4.1.17",
+    "vite": "^7.2.7"
   }
 }
