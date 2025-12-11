@@ -41,17 +41,19 @@ import { TREND_STATISTIC } from '../constant';
 interface IStatisticCardProps {
   title?: string;
   value: number | string;
-  prefix?: string;
-  suffix?: string;
-  precision?: number;
-  trend?: {
-    value: number | string;
-    type: TREND_STATISTIC;
-    period?: string;
-  };
-  subtitle?: string;
-  valueClassName?: string;
-  className?: string;
+  prefix?: string | undefined;
+  suffix?: string | undefined;
+  precision?: number | undefined;
+  trend?:
+    | {
+        value: number | string;
+        type: TREND_STATISTIC;
+        period?: string;
+      }
+    | undefined;
+  subtitle?: string | undefined;
+  valueClassName?: string | undefined;
+  className?: string | undefined;
 }
 
 export const StatisticCard: React.FC<IStatisticCardProps> = ({
