@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { staticUrl } from '@/core/utils';
 
 interface HeaderProps {
@@ -6,14 +6,14 @@ interface HeaderProps {
 }
 
 export const Header = ({ className = '' }: HeaderProps) => {
-    const clientLogo =  staticUrl('/images/default_logo_client.png');
-    const clientName = 'PtE' //sessionData?.Client?.ClientName || ;
-    const userAvatarUrl = staticUrl('/images/default_logo_client.png');
-    const userShortName =  'JD' //sessionData?.User?.ShortName || ;
+  const clientLogo = staticUrl('/images/default_logo_client.png');
+  const clientName = 'PtE'; //sessionData?.Client?.ClientName || ;
+  const userAvatarUrl = staticUrl('/images/default_logo_client.png');
+  const userShortName = 'JD'; //sessionData?.User?.ShortName || ;
 
-    return (
+  return (
     <header
-      className={`bg-container-primary shadow-md ${className} pt-[var(--safe-top)]`} 
+      className={`bg-container-primary shadow-md ${className} pt-[var(--safe-top)]`}
     >
       <div className='max-w-12xl h-[64px] mx-auto px-3 py-3 flex justify-between items-center'>
         <div className='space-x-4'>
@@ -22,7 +22,7 @@ export const Header = ({ className = '' }: HeaderProps) => {
             // onClick={() => gotoPtEApp()}
           >
             <img
-            //   src={sessionData.Client.LogoUrl}
+              //   src={sessionData.Client.LogoUrl}
               src={clientLogo}
               alt='PtE Logo'
               className='min-h-8 w-8 h-8 rounded-full shadow-sm object-cover shrink-0 aspect-square'
@@ -37,7 +37,7 @@ export const Header = ({ className = '' }: HeaderProps) => {
         </div>
         <div
           className='items-center justify-start p-1 max-h-10 h-10  cursor-pointer block sm:hidden'
-        //   onClick={() => gotoPtEApp()}
+          //   onClick={() => gotoPtEApp()}
         >
           <img
             src={staticUrl('/images/pteverywhere-logo.png')}
@@ -71,5 +71,5 @@ export const Header = ({ className = '' }: HeaderProps) => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
