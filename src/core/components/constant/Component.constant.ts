@@ -1,0 +1,4 @@
+export enum TREND_STATISTIC {
+  INCREASE = 'INCREASE',
+  DECREASE = 'DECREASE',
+}
