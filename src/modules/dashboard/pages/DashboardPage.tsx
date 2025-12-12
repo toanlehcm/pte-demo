@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Segmented, Space, Typography } from 'antd';
-import { TAB_DASHBOARD, TAB_KEY } from '../constant/common.constant';
+import { TAB_DASHBOARD } from '../constants/dashboard.constant';
 import {
   BackEndAnalytics,
   FrontEndAnalytics,
   PracticeExecutiveSummary,
 } from '../components';
+import { TAB_KEY } from '../types';
 
 const DashboardPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TAB_KEY>(TAB_KEY.PRACTICE);

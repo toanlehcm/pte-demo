@@ -1,8 +1,4 @@
-export enum TAB_KEY {
-  PRACTICE = 'PRACTICE',
-  FRONTEND = 'FRONTEND',
-  BACKEND = 'BACKEND',
-}
+import { TAB_KEY } from '../types';
 
 export const TAB_DASHBOARD = [
   {
