@@ -36,7 +36,7 @@ export const DashboardFilters: React.FC<IDashboardFiltersProps> = ({
   };
 
   return (
-    <div className='flex items-center gap-4 rounded-lg bg-white p-4'>
+    <div className='flex items-center gap-4 rounded-lg bg-white'>
       <Space size='middle' wrap>
         {/* Date Range */}
         <DatePicker.RangePicker

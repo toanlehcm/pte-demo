@@ -32,7 +32,7 @@ const DashboardPage: React.FC = () => {
           size='large'
         />
 
-        <div className='rounded-lg bg-white p-6'>{tabContent[activeTab]}</div>
+        <div className='rounded-lg bg-white'>{tabContent[activeTab]}</div>
       </Space>
     </div>
   );

@@ -97,11 +97,9 @@ export const StatisticCard: React.FC<IStatisticCardProps> = ({
   };
 
   return (
-    <div className={className}>
-      {/* Title */}
-      <div className='mb-2 text-sm text-gray-500'>{title}</div>
+    <div className={cn('flex bg-[#F8F8F9]', className)}>
+      <div className='text-sm text-gray-500'>{title}</div>
 
-      {/* Value */}
       <div
         className={cn(
           'text-3xl font-semibold leading-tight text-gray-900',
@@ -113,10 +111,8 @@ export const StatisticCard: React.FC<IStatisticCardProps> = ({
         {suffix}
       </div>
 
-      {/* Subtitle */}
       {subtitle && <div className='mt-2 text-xs text-gray-500'>{subtitle}</div>}
 
-      {/* Trend */}
       {renderTrend()}
     </div>
   );

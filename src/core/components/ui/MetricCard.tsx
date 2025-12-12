@@ -7,7 +7,7 @@ import { cn } from '@/core/lib/utils';
 
 interface IMetricCardProps extends Omit<CardProps, 'title'> {
   // StatisticCard props
-  title: string;
+  title?: string;
   value: number | string;
   prefix?: string;
   suffix?: string;
@@ -52,7 +52,7 @@ export const MetricCard: React.FC<IMetricCardProps> = ({
       bordered={bordered}
       hoverable={hoverable}
       size={size}
-      className={cn('h-full', className)}
+      className={cn('', className)}
       {...restCardProps}
     >
       <StatisticCard
