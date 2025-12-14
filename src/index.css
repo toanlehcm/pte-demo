@@ -1,10 +1,21 @@
-@import "tailwindcss";
+@layer theme, base, antd, components, utilities;
+@import 'tailwindcss';
 
 @layer base {
   /* Global font configuration */
   body {
     color: var(--text-primary-2);
-    font-family: var(--font-poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif);
+    font-family: var(
+      --font-poppins,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      'Roboto',
+      'Oxygen',
+      'Ubuntu',
+      'Cantarell',
+      sans-serif
+    );
     font-size: 1rem;
     /* Improve text rendering */
     -webkit-font-smoothing: antialiased;
@@ -13,7 +24,7 @@
   }
 
   main {
-    background-color: #F2F2F7;
+    background-color: #f2f2f7;
   }
 
   :root {

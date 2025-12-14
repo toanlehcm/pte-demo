@@ -51,9 +51,13 @@ export const PracticeExecutiveSummary: React.FC = () => {
 
       {/* Content */}
       <CardCmp
-        title={
-          <Typography.Title level={5}>Appointment Fill Rate</Typography.Title>
-        }
+        // title={
+        //   <Typography.Title
+        //   level={5}
+        //   className=''
+        //   >Appointment Fill Rate</Typography.Title>
+        // }
+        title='Appointment Fill Rate'
         // styles={{
         //   header: {
         //     padding: '16px 12px', // ← Custom title padding
@@ -64,7 +68,7 @@ export const PracticeExecutiveSummary: React.FC = () => {
         // }}
         classNames={{
           root: 'rounded-lg bg-white px-6 py-4',
-          header: '!px-10 !py-10',
+          header: 'px-3 py-4',
         }}
       >
         {/* Statistics Cards */}
