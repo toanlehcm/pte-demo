@@ -4,7 +4,8 @@ import { DashboardFilters } from './DashboardFilters';
 import { DonutChart } from './DonutChart';
 import { useTabFilters } from '../hooks';
 import { TAB_KEY } from '../types';
-import { CardCmp, StatisticCard } from '@/core/components';
+import { CardCmp, PieChartCmp, StatisticCard } from '@/core/components';
+import type { PieConfig } from '@ant-design/plots';
 
 export const PracticeExecutiveSummary: React.FC = () => {
   const {
@@ -29,6 +30,40 @@ export const PracticeExecutiveSummary: React.FC = () => {
     (sum, item) => sum + item.value,
     0
   );
+
+  const config: Partial<PieConfig> = {
+    data: [
+      { type: 'Finished', value: 10 },
+      { type: 'Booked', value: 8 },
+      { type: 'Cancelled', value: 3 },
+      { type: 'No Show', value: 2 },
+      { type: 'Rescheduled', value: 1 },
+    ],
+    annotations: [
+      {
+        type: 'text',
+        style: {
+          text: '24',
+          x: '50%',
+          y: '45%',
+          textAlign: 'center',
+          fontSize: 40,
+        },
+      },
+      {
+        type: 'text',
+        class: 'text-center font-bold text-sm',
+        style: {
+          text: 'Appointments',
+          x: '50%',
+          y: '55%',
+          // textAlign: 'center',
+          // fontSize: 12,
+          // fontWeight: 'bold',
+        },
+      },
+    ],
+  };
 
   return (
     <div className='flex flex-col gap-4'>
@@ -98,7 +133,7 @@ export const PracticeExecutiveSummary: React.FC = () => {
 
         {/* Donut Chart */}
         <div className='mt-6'>
-          <DonutChart
+          {/* <DonutChart
             data={appointmentData}
             centerText={{
               value: totalAppointments,
@@ -106,7 +141,11 @@ export const PracticeExecutiveSummary: React.FC = () => {
             }}
             height={300}
             showLegend
-          />
+          /> */}
+        </div>
+
+        <div className='w-full'>
+          <PieChartCmp {...config} />
         </div>
       </CardCmp>
     </div>
