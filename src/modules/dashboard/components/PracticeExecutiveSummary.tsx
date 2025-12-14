@@ -4,7 +4,7 @@ import { DashboardFilters } from './DashboardFilters';
 import { DonutChart } from './DonutChart';
 import { useTabFilters } from '../hooks';
 import { TAB_KEY } from '../types';
-import { StatisticCard } from '@/core/components';
+import { CardCmp, StatisticCard } from '@/core/components';
 
 export const PracticeExecutiveSummary: React.FC = () => {
   const {
@@ -50,9 +50,23 @@ export const PracticeExecutiveSummary: React.FC = () => {
       )}
 
       {/* Content */}
-      <div className='rounded-lg bg-white px-3 py-4'>
-        <Typography.Title level={5}>Appointment Fill Rate</Typography.Title>
-
+      <CardCmp
+        title={
+          <Typography.Title level={5}>Appointment Fill Rate</Typography.Title>
+        }
+        // styles={{
+        //   header: {
+        //     padding: '16px 12px', // ← Custom title padding
+        //   },
+        //   body: {
+        //     padding: '24px', // ← Custom body padding
+        //   },
+        // }}
+        classNames={{
+          root: 'rounded-lg bg-white px-6 py-4',
+          header: '!px-10 !py-10',
+        }}
+      >
         {/* Statistics Cards */}
         <div className='flex gap-2'>
           <StatisticCard
@@ -90,7 +104,7 @@ export const PracticeExecutiveSummary: React.FC = () => {
             showLegend
           />
         </div>
-      </div>
+      </CardCmp>
     </div>
   );
 };
