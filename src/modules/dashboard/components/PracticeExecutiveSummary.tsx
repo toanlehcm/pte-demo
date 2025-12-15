@@ -6,6 +6,7 @@ import { useTabFilters } from '../hooks';
 import { TAB_KEY } from '../types';
 import { CardCmp, PieChartCmp, StatisticCard } from '@/core/components';
 import type { PieConfig } from '@ant-design/plots';
+import PieRechartCmp from '@/core/components/ui/PieRechartCmp';
 
 export const PracticeExecutiveSummary: React.FC = () => {
   const {
@@ -64,6 +65,19 @@ export const PracticeExecutiveSummary: React.FC = () => {
       },
     ],
   };
+
+  const dataPieRechart = [
+    { name: 'Finished', value: 10, fill: '#52C41A' },
+    { name: 'Booked', value: 8, fill: '#1890FF' },
+    { name: 'Cancelled', value: 3, fill: '#FF4D4F' },
+    { name: 'No Show', value: 2, fill: '#FAAD14' },
+    { name: 'Rescheduled', value: 1, fill: '#722ED1' },
+  ];
+
+  const totalDataPieRechart = dataPieRechart.reduce(
+    (sum, item) => sum + item.value,
+    0
+  );
 
   return (
     <div className='flex flex-col gap-4'>
@@ -146,6 +160,39 @@ export const PracticeExecutiveSummary: React.FC = () => {
 
         <div className='w-full'>
           <PieChartCmp {...config} />
+        </div>
+
+        <div className='w-full'>
+          <PieRechartCmp
+            data={dataPieRechart}
+            labelProps={{
+              position: 'center',
+              fill: '#666',
+              // value: 'Flex: 1 1 200px',
+              content: (
+                <div className='font-poppins font-semibold leading-[35.1px] tracking-normal text-center'>
+                  <Typography.Text className='text-2xl'>
+                    {totalDataPieRechart}
+                  </Typography.Text>
+                  <br />
+                  <Typography.Text className='text-sm leading-[35.1px]'>
+                    Appointments
+                  </Typography.Text>
+                </div>
+                // -----
+                // <div className='flex flex-col items-center gap-1'>
+                //   <span className='text-4xl font-semibold text-gray-900'>
+                //     {totalDataPieRechart}
+                //   </span>
+                //   <span className='text-sm text-gray-500'>Appointments</span>
+                // </div>
+              ),
+            }}
+            legendProps={{
+              verticalAlign: 'bottom',
+              height: 50,
+            }}
+          />
         </div>
       </CardCmp>
     </div>
